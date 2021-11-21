@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo "checking software version"
                 sh '''
-                /usr/bin/python3 -V
+                python3 -V
                 '''
                  
             }
