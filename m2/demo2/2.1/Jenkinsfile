@@ -4,6 +4,15 @@ pipeline {
         RELEASE='20.04'
     }
     stages {
+        stage('Pre-build'){
+            agent any
+            steps {
+                echo "checking software version"
+                python -V
+            }
+
+        }
+
         stage('Build') {
             agent any
             environment {
@@ -15,8 +24,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Testing. I can see release ${RELEASE}"
+                echo "Testing. I can see release ${RELEASE} "
             }
         }
+
     }
 }
